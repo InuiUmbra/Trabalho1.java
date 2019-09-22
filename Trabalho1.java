@@ -1,6 +1,7 @@
 import javax.swing.JOptionPane;
 public class Trabalho1{
 	public static void main(String[] args) {
+		int operaçao;
 		String A[][]=new String[3][3];
 		A[0][0] = "Tibúrcio";
 		A[0][1] = "Ricardo";
@@ -34,37 +35,36 @@ public class Trabalho1{
 		C[2][1]=0.0;
 		C[2][2]=0.0;
 		
-		while(contador<=5){
-			switch
-			
-			case 1:
+		operaçao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma das opera abaixo: \n"
+			+"1 - Inserir Recebimento \n"
+			+"2 - Inserir Pagamento \n"
+			+"3 - Todos os Números de Conta, Correntistas e Saldos respectivos \n"
+			+"4 - O Número da Conta, o Nome do Correntista e o saldo do correntista mais RICO \n"
+			+"5 - Os saldos ordenados do menor para o maior \n"
+			+"6 - Sair"));
+		
+		while(operaçao<=5){
+			switch(operaçao){
+				case 1:
 				
-			break;
+				break;
 			
-			
-			case 2:
+				case 2:
 				
-			break;
+				break;
 			
-			
-			case 3:
+				case 3:
 				
-			break;
-			
-			
-			case 4:
+				break;
+	
+				case 4:
 				
-			break;
+				break;
 			
-			
-			case 5:
+				case 5:
 				
-			break;
-			
-			
-			case 6:
-				
-			break;
+				break;	
+			}
 		}
 	}
 }

@@ -39,7 +39,8 @@ public class Trabalho1{
 		C[2][1]=0.0;
 		C[2][2]=0.0;
 		
-		operaçao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma das opera abaixo: \n"
+		//operações
+		operaçao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma das operações abaixo: \n"
 			+"1 - Inserir Recebimento \n"
 			+"2 - Inserir Pagamento \n"
 			+"3 - Todos os Números de Conta, Correntistas e Saldos respectivos \n"

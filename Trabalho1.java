@@ -1,9 +1,9 @@
 import javax.swing.JOptionPane;
-public class Trabalho1{
+public class testetrab{
 	public static void main(String[] args) {
-		String nome;
-		int operacao, i, j, conta;
-		double saldo, transacao;
+		String nome,todosnomes,todascontas,todossaldos,rico;
+		int operacao, i, j, conta,contarico,troca,a,fim;
+		double saldo, transacao,maior,aux;
 	
 		//Uma 3x3 que armazene os nomes dos correntistas
 		String A[][]=new String[3][3];
@@ -43,7 +43,7 @@ public class Trabalho1{
 		
 		operacao = 0;
 		
-		// Menu(usando while e switch)
+		//Menu(usando while e switch)
 		while(operacao<=5){
 			switch(operacao){
 				case 0:
@@ -92,14 +92,73 @@ public class Trabalho1{
 				
 				//Números de Conta, Correntistas e Saldos respectivos
 				case 3:
-					operacao = 0;
+					todosnomes="";
+					todossaldos="";
+					todascontas="";
+					for (i=0;i<3 ;i++ ) {
+						for (j=0;j<3 ;j++ ) {
+							todosnomes=todosnomes + " : "+A[i][j];
+							todascontas=todascontas+" : "+B[i][j];
+							todossaldos=todossaldos+" : "+C[i][j];
+							operacao = 0;
+						}
+					}
+					JOptionPane.showMessageDialog(null,"Números das contas " + todascontas
+						+"\n Nomes dos correntistas " + todosnomes
+						+"\n Saldos das contas " + todossaldos);
 				break;
 	
+				// o Número da Conta, o Nome do Correntista e o saldo do correntista mais RICO
 				case 4:
-					operacao = 0;
+					contarico=0;
+					maior=0;
+					rico="";
+					for (i=0;i<3 ;i++ ) {
+						for (j=0;j<3;j++) {
+							if (C[i][j]>maior) {
+								maior=C[i][j];
+								rico=rico+A[i][j];
+								contarico=B[i][j];
+								operacao = 0;
+							}
+						}
+					}JOptionPane.showMessageDialog(null," Numero da conta do correntista mais rico: "+contarico
+						+"\n Em nome de: "+rico
+						+"\n Com o saldo de: "+maior);
 				break;
-			
+
+				// todos os saldos ordenados do menor para o maior usando BubbleSort.
 				case 5:
+					a=0;
+					double vetorsaldo[]=new double[9];
+					for (i=0;i<3 ;i++ ) {
+						for (j=0;j<3 ;j++ ) {
+							vetorsaldo[a]=C[i][j];
+							a++;
+						}
+					}
+					troca=1;
+					fim=a-1;
+					while(troca==1){
+						troca = 0;
+						for(i=0; i<fim;i++){
+							if (vetorsaldo[i] > vetorsaldo[i+1]){
+								aux = vetorsaldo[i];
+								vetorsaldo[i] = vetorsaldo[i+1];
+								vetorsaldo[i+1]=aux;
+								troca = 1;
+							}	
+						}
+					}                                             
+					JOptionPane.showMessageDialog(null,"Os saldos ordenados do menor para o maior são: \n"+ vetorsaldo[0]
+						+"\n"+vetorsaldo[1]
+						+"\n"+vetorsaldo[2]
+						+"\n"+vetorsaldo[3]
+						+"\n"+vetorsaldo[4]
+						+"\n"+vetorsaldo[5]
+						+"\n"+vetorsaldo[6]
+						+"\n"+vetorsaldo[7]
+						+"\n"+vetorsaldo[8]);
 					operacao = 0;
 				break;
 

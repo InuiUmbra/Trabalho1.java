@@ -5,7 +5,7 @@ public class Trabalho1{
 		int operacao, i, j, conta;
 		double saldo, transacao;
 	
-		//- Uma 3x3 que armazene os nomes dos correntistas
+		//Uma 3x3 que armazene os nomes dos correntistas
 		String A[][]=new String[3][3];
 		A[0][0] = "Tibúrcio";
 		A[0][1] = "Ricardo";
@@ -56,7 +56,7 @@ public class Trabalho1{
 						+"6 - Sair"));
 				break;
 
-				//– Inserir Recebimento 
+				//Inserir Recebimento 
 				case 1:
 					conta = Integer.parseInt(JOptionPane.showInputDialog("Insira o numero da conta"));
 					transacao = Double.parseDouble(JOptionPane.showInputDialog("Insira o valor a ser depositado"));
@@ -73,7 +73,7 @@ public class Trabalho1{
 					}	
 				break;
 			
-				//– Inserir Pagamento 
+				//Inserir Pagamento 
 				case 2:
 					conta = Integer.parseInt(JOptionPane.showInputDialog("Insira o número da conta"));
 					transacao = Double.parseDouble(JOptionPane.showInputDialog("Insira o valor do pagamento"));

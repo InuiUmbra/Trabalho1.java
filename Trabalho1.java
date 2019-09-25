@@ -1,7 +1,9 @@
 import javax.swing.JOptionPane;
 public class Trabalho1{
 	public static void main(String[] args) {
-		int operaçao;
+		String nome;
+		int operacao, i, j, conta;
+		double saldo, transacao;
 	
 		//- Uma 3x3 que armazene os nomes dos correntistas
 		String A[][]=new String[3][3];
@@ -39,37 +41,71 @@ public class Trabalho1{
 		C[2][1]=0.0;
 		C[2][2]=0.0;
 		
-		//operações
-		operaçao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma das operações abaixo: \n"
-			+"1 - Inserir Recebimento \n"
-			+"2 - Inserir Pagamento \n"
-			+"3 - Todos os Números de Conta, Correntistas e Saldos respectivos \n"
-			+"4 - O Número da Conta, o Nome do Correntista e o saldo do correntista mais RICO \n"
-			+"5 - Os saldos ordenados do menor para o maior \n"
-			+"6 - Sair"));
+		operacao = 0;
 		
 		// Menu(usando while e switch)
-		while(operaçao<=5){
-			switch(operaçao){
+		while(operacao<=5){
+			switch(operacao){
+				case 0:
+					operacao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma das operações abaixo: \n"
+						+"1 - Inserir Recebimento \n"
+						+"2 - Inserir Pagamento \n"
+						+"3 - Todos os Números de Conta, Correntistas e Saldos respectivos \n"
+						+"4 - O Número da Conta, o Nome do Correntista e o saldo do correntista mais RICO \n"
+						+"5 - Os saldos ordenados do menor para o maior \n"
+						+"6 - Sair"));
+				break;
+
+				//– Inserir Recebimento 
 				case 1:
-					
+					conta = Integer.parseInt(JOptionPane.showInputDialog("Insira o numero da conta"));
+					transacao = Double.parseDouble(JOptionPane.showInputDialog("Insira o valor a ser depositado"));
+					for (i=0;i<3 ;i++ ) {
+						for (j=0;j<3 ;j++ ) {
+							if (B[i][j] == conta) {
+								C[i][j] = C[i][j] + transacao;
+								saldo = C[i][j];
+								nome = A[i][j];
+								JOptionPane.showMessageDialog(null,nome + " seu saldo atual é de: " + saldo);
+								operacao = 0;
+							}
+						}
+					}	
 				break;
 			
+				//– Inserir Pagamento 
 				case 2:
-				
+					conta = Integer.parseInt(JOptionPane.showInputDialog("Insira o número da conta"));
+					transacao = Double.parseDouble(JOptionPane.showInputDialog("Insira o valor do pagamento"));
+					for (i=0; i<3; i++) {
+						for (j=0; j<3; j++) {
+							if (B[i][j] == conta) {
+								C[i][j] = C[i][j] - transacao;
+								saldo = C[i][j];
+								nome = A[i][j];
+								JOptionPane.showMessageDialog(null, nome + " seu saldo atual é de: " + saldo);
+								operacao=0;
+							}
+						}
+					}
 				break;
-			
-				case 3:
 				
+				//Números de Conta, Correntistas e Saldos respectivos
+				case 3:
+					operacao = 0;
 				break;
 	
 				case 4:
-				
+					operacao = 0;
 				break;
 			
 				case 5:
-				
-				break;	
+					operacao = 0;
+				break;
+
+				case 6:
+					operacao = 6;
+				break;
 			}
 		}
 	}

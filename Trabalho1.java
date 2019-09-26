@@ -117,7 +117,7 @@ public class testetrab{
 						for (j=0;j<3;j++) {
 							if (C[i][j]>maior) {
 								maior=C[i][j];
-								rico=rico+A[i][j];
+								rico=A[i][j];
 								contarico=B[i][j];
 								operacao = 0;
 							}

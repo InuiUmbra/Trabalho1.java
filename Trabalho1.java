@@ -104,8 +104,8 @@ public class Trabalho1{
 						}
 					}
 					JOptionPane.showMessageDialog(null,"Números das contas " + todascontas
-						+"\n Nomes dos correntistas " + todosnomes
-						+"\n Saldos das contas " + todossaldos);
+						+"\nNomes dos correntistas " + todosnomes
+						+"\nSaldos das contas " + todossaldos);
 				break;
 	
 				// o Número da Conta, o Nome do Correntista e o saldo do correntista mais RICO

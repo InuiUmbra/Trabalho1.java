@@ -1,5 +1,5 @@
 import javax.swing.JOptionPane;
-public class testetrab{
+public class Trabalho1{
 	public static void main(String[] args) {
 		String nome,todosnomes,todascontas,todossaldos,rico;
 		int operacao, i, j, conta,contarico,troca,a,fim;

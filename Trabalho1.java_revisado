@@ -110,8 +110,8 @@ public class Trabalho1{
 						}
 					}
 					JOptionPane.showMessageDialog(null,"Números das contas " + todascontas
-						+"\n Nomes dos correntistas " + todosnomes
-						+"\n Saldos das contas " + todossaldos);
+						+"\n" +"Nomes dos correntistas " + todosnomes
+						+"\n" +"Saldos das contas " + todossaldos);
 					operacao = 0;
 				break;
 	
